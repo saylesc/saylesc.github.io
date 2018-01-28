@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>saylesc blog</title>
+  <title>Github.IO</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="libs/angular-ui-tree/dist/angular-ui-tree.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
-  <!-- Angular libraries -->
-  <script type="text/javascript" src="libs/angular/angular.min.js"></script>
-  <script type="text/javascript" src="libs/angular-ui-tree/dist/angular-ui-tree.js"></script>
-  <script type="text/javascript" src="js/treeItems.js"></script>
 </head>
 <body ng-app="coryBlog">
    <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -24,38 +19,39 @@
          <a class="navbar-brand" href="#">saylesc</a>
        </div>
        <ul class="nav navbar-nav">
-         <li class="active"><a href="#">Home</a></li>
-         <li><a href="#">Blog</a></li>
-         <li><a href="#">Family</a></li>
+         <li class="active"><a href="http://saylesc.github.io/">Home</a></li>
+         <li><a href="blog.html">Blog</a></li>
+         <li><a href="#">GitHub-Fun</a></li>
        </ul>
      </div>
    </nav>
    <div class="container">
-      <div class="jumbotron">
-         <h1>Welcome to my blog</h1>
-       
-         <!-- Initiate the tree -->
-         <div ui-tree ng-controller="CoryTreeController">
-            <ol ui-tree-nodes="" ng-model="treeList">
-               <li ng-repeat="item in treeList" ui-tree-node>
-                  <div ui-tree-handle>
-                    {{item.title}}
-                  </div>
-                  <ol ui-tree-nodes="" ng-model="item.nodes">
-                     <li ng-repeat="subItem in item.nodes" ui-tree-node>
-                        <div ui-tree-handle>
-                           {{subItem.title}}
-                        </div>
-                     </li>
-                  </ol>
-               </li>
-            </ol>
-         </div>
-       
-       <div>
-         <h3><a href="http://www.rei.com/WishlistView?id=c10d818b-7c9d-4d58-b6c6-eaf016c0c565">REI Wishlist</a></h3>
-       </div>
-     </div>
+      <!-- Slide Show -->
+      <section style="max-width:1200px">
+         <img class="mySlides" src="images/tara.png" style="width:100%">
+         <img class="mySlides" src="images/me.jpg" style="width:100%">
+      </section>
+      <!--<section class="w3-container w3-center" style="max-width:600px">
+         <h2 class="w3-wide">Me</h2>
+         <p class="w3-opacity"><i>We love music</i></p>
+      </section>-->
+      <script type="text/javascript">
+         // Automatic Slideshow - change image every 3 seconds
+         var myIndex = 0;
+         carousel();
+      
+         function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}
+            x[myIndex-1].style.display = "block";
+            setTimeout(carousel, 3000);
+         }
+      </script> 
    </div>
 </body>
 </html>
