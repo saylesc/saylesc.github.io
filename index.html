@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="libs/angular-ui-tree/dist/angular-ui-tree.min.css">
   <!--
   <style>
@@ -16,30 +16,32 @@
       }
   </style> 
   -->
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <!--
-   <script src="libs/Cesium/Cesium.js"></script> 
-  -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   <!-- Angular libraries -->
   <script type="text/javascript" src="libs/angular/angular.min.js"></script>
   <script type="text/javascript" src="libs/angular-ui-tree/dist/angular-ui-tree.js"></script>
   <script type="text/javascript" src="js/treeItems.js"></script>
+  
+  <!--
+   <script src="libs/Cesium/Cesium.js"></script> 
+  -->
+  
 </head>
 <body ng-app="coryBlog">
    <nav class="navbar navbar-inverse">
      <div class="container-fluid">
        <div class="navbar-header">
-         <button class="navbar-toggle" data-toggle="collapse" data-target="#saylesc-nav">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#saylesc-nav">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
          </button>
          <a class="navbar-brand" href="#">saylesc</a>
        </div>
-       <div class="collapse navbar-collapse id="saylesc-nav">
+       <div class="collapse navbar-collapse" id="saylesc-nav">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="gitfun.html">GitHub-Fun</a></li>
@@ -73,6 +75,19 @@
             <div id="cez-e-um">
             </div>
          </div>
+         
+         
+         <script>
+            function myMap() {
+               var mapProp= {
+                   center:new google.maps.LatLng(51.508742,-0.120850),
+                   zoom:5,
+               };
+               var map=new google.maps.Map(document.getElementById("cez-e-um"),mapProp);
+            }
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbFUbGZ9-iFsbbaeVluMYdST-sjhzCm0Y&callback=myMap"></script>
      </div>
    </div>
 </body>
