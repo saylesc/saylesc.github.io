@@ -24,25 +24,20 @@
          <a class="navbar-brand" href="#">saylesc</a>
        </div>
        <ul class="nav navbar-nav">
-         <li class="active"><a href="http://saylesc.github.io/">Home</a></li>
-         <li><a href="#">Blog</a></li>
-         <li><a href="#">GitHub-Fun</a></li>
+         <li><a href="http://saylesc.github.io/">Home</a></li>
+         <li class="active"><a href="#">GitHub-Fun</a></li>
        </ul>
      </div>
    </nav>
    <div class="container">
       <div class="jumbotron">
-         <h1>The Non-Blog</h1>
+         <h2>Tech Fun</h2>
          <div>
-         	<h3>Tech Frustration</h3>
          	<p>
-         		Does anyone else suffer from tech frustration? Too much tech to keep up with. As a software developer, I find
-         		myself interested in too many tech-y things. I end up with so many things I want to do, but none of them get done because I'm too 
-         		busy thinking about them all. 
-         		Here are a few of my interests - organized using a draggable list (angular-ui-tree) to demonstrate how they can change based on my mood and my work load. 
+         		Here are a few technologies that interest me - organized using angular-ui-tree. Feel free to drag things around to reorganize them. 
          	</p>
          	<div>
-         		<!-- Initiate the tree -->
+         		<!-- Tree fun -->
                <div ui-tree ng-controller="CoryTechController">
                   <ol ui-tree-nodes="" ng-model="treeList">
                      <li ng-repeat="item in treeList" ui-tree-node>
@@ -58,8 +53,7 @@
                         </ol>
                      </li>
                   </ol>
-               
-               	</div>
+            	</div>
          </div>
      </div>
    </div>

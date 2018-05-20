@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>saylesc blog</title>
+  <title>saylesc</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="libs/angular-ui-tree/dist/angular-ui-tree.min.css">
+  <!--
+  <style>
+      @import url(libs/Cesium/Widgets/widgets.css);
+      html, body, #cez-e-um {
+          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+      }
+  </style> 
+  -->
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!--
+   <script src="libs/Cesium/Cesium.js"></script> 
+  -->
   
   <!-- Angular libraries -->
   <script type="text/javascript" src="libs/angular/angular.min.js"></script>
@@ -18,43 +29,50 @@
   <script type="text/javascript" src="js/treeItems.js"></script>
 </head>
 <body ng-app="coryBlog">
-   <nav class="navbar navbar-inverse navbar-fixed-top">
+   <nav class="navbar navbar-inverse">
      <div class="container-fluid">
        <div class="navbar-header">
+         <button class="navbar-toggle" data-toggle="collapse" data-target="#saylesc-nav">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
          <a class="navbar-brand" href="#">saylesc</a>
        </div>
-       <ul class="nav navbar-nav">
-         <li class="active"><a href="#">Home</a></li>
-         <li><a href="blog.html">Blog</a></li>
-         <li><a href="#">Family</a></li>
-       </ul>
+       <div class="collapse navbar-collapse id="saylesc-nav">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="gitfun.html">GitHub-Fun</a></li>
+          </ul>
+       </div>
      </div>
    </nav>
    <div class="container">
       <div class="jumbotron">
-         <h1>Welcome to my blog</h1>
-       
-         <!-- Initiate the tree -->
-         <div ui-tree ng-controller="CoryTreeController">
-            <ol ui-tree-nodes="" ng-model="treeList">
-               <li ng-repeat="item in treeList" ui-tree-node>
-                  <div ui-tree-handle>
-                    {{item.title}}
-                  </div>
-                  <ol ui-tree-nodes="" ng-model="item.nodes">
-                     <li ng-repeat="subItem in item.nodes" ui-tree-node>
-                        <div ui-tree-handle>
-                           {{subItem.title}}
-                        </div>
-                     </li>
-                  </ol>
-               </li>
-            </ol>
+         <h1>Welcome to my GitHub page. </h1>
+         <div>
+            <p>
+         		This page doesn't necessarily explain any software or serve any purpose beneficial to the public. It's just a quick place for me to practice a 
+         		few techy things as I contribute to other projects. With that said, I only update once in a while as time permits.  
+            </p>
+      	</div>
+         <div>
+         	<p>
+         		Almost all of my hobbies take me outdoors. Most of those things are nicely accomodate by this one store - <a href="http://www.rei.com">REI</a>. 
+         		Check out my wishlist below!
+         	</p>
+            <h3><a href="http://www.rei.com/WishlistView?id=c10d818b-7c9d-4d58-b6c6-eaf016c0c565">REI Wishlist</a></h3>
          </div>
        
-       <div>
-         <h3><a href="http://www.rei.com/WishlistView?id=c10d818b-7c9d-4d58-b6c6-eaf016c0c565">REI Wishlist</a></h3>
-       </div>
+         <!-- Where in the world are we -->
+         <!-- Maybe an openmap or cesium div here? -->
+         <div>
+            <p>
+         		See the map below to view a few places I've been (Nicaragua, Italy[Rome, Florence, Venice]/France/GB PR, CostaRica, Peru, Cali, Hawksbill, Yellowstone, Black Balsam)
+            </p>
+            <div id="cez-e-um">
+            </div>
+         </div>
      </div>
    </div>
 </body>
